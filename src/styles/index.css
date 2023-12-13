@@ -1,3 +1,4 @@
+@import './variables.css';
 @import './background.css';
 
 @tailwind base;
@@ -22,7 +23,7 @@ body {
 }
 
 .gradient {
-  background: linear-gradient(to right top,#ffc600 20%,#ff0040,#e600cc 80%);
+  background: linear-gradient(to right top,var(--color-1) 20%,var(--color-2),var(--color-3) 80%);
 }
 
 .left-dir-gradient:active {

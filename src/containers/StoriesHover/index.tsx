@@ -14,7 +14,7 @@ const StoriesHover: React.FC<StoriesHoverProps> = ({ children }): JSX.Element =>
   const [data, setData] = React.useState(null);
 
   useEffect(() => {
-    fetchData('/data/merchantCode/5814/8038549')
+    fetchData('/data/merchantCode/5992/5567111702')
       .then(data => {
         if (data) {
           console.log('Fetched data:', data);

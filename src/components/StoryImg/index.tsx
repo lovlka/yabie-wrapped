@@ -15,11 +15,12 @@ import { BsFillArrowRightCircleFill, BsFillArrowLeftCircleFill } from "react-ico
 import { STORIES } from "@app/data/stories"
 
 export interface StoryImgProps {
+  data: any;
   imgUrl: string;
   children: JSX.Element;
 }
 
-const StoryImg: React.FC<StoryImgProps> = ({ imgUrl, children }): JSX.Element => {
+const StoryImg: React.FC<StoryImgProps> = ({ data, imgUrl, children }): JSX.Element => {
   const { storiesDispatch, currentStories } = useContext(StoriesContext) as IStoriesContext
   const { dispatch, modal:{ userId } } = useContext(AppContext) as IAppContext
   const { currentStoryIndex } = getCurrentStory(currentStories, imgUrl)
@@ -55,6 +56,12 @@ const StoryImg: React.FC<StoryImgProps> = ({ imgUrl, children }): JSX.Element =>
         className="h-full object-cover object-center rounded-xl"
         onLoad={handleLoad(configStoryTransition)}
       />
+
+      <div className="absolute flex items-center justify-center bottom-0 left-0 w-full h-full">
+        <pre>
+          {JSON.stringify(data, null, 2)}
+        </pre>
+      </div>
 
       <ConditionalNode condition={!isVeryLastStory}>
         <StoryButton>

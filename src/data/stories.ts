@@ -11,7 +11,6 @@ import vacation3 from "@app/assets/stories/vacation3.jpg"
 import vacation4 from "@app/assets/stories/vacation4.jpg"
 import vacation5 from "@app/assets/stories/vacation5.jpg"
 
-
 export const STORIES = [
   {
     id: 0,
@@ -20,22 +19,10 @@ export const STORIES = [
       story1,
       story2,
       story3,
-      story4
-    ]
-  },
-  {
-    id: 1,
-    author: 1,
-    stories: [
+      story4,
       elder1,
       elder2,
-      elder3
-    ]
-  },
-  {
-    id: 2,
-    author: 2,
-    stories: [
+      elder3,
       vacation1,
       vacation2,
       vacation3,

@@ -25,7 +25,7 @@ const StoryPortal: React.FC = (): JSX.Element => {
 
   return(
     <StoriesContext.Provider value={storiesStateInitialValue as IStoriesContext}>
-      <section className="fixed top-0 w-full h-screen bg-black">
+      <section className="fixed top-0 w-full h-screen bg-black z-10">
         <StoriesHover>
           <div className="p-3 flex justify-between items-center">
             <StoryBubble

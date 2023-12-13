@@ -1,12 +1,12 @@
 import { Header } from "@app/components/Header"
-import { Stories } from "@app/containers/Stories"
-import { ContentMedia } from "@app/containers/ContentMedia"
 import { AppContext } from "@app/contexts"
 import { getInitialState } from "@app/services/getInitialState"
-import { useEffect, useReducer } from "react"
+import { useReducer } from "react"
 import { reducerFn } from "@app/reducers"
 import { Portal } from "@app/portals"
 import { StoryPortal } from "@app/portals/StoryPortal"
+import { StoryBubble } from "./components/StoryBubble"
+import { USERS } from "./data/users"
 
 function App() {
   const [state, dispatch] = useReducer(reducerFn, getInitialState())
@@ -15,19 +15,21 @@ function App() {
     dispatch
   }
 
+  const { id, name, avatar } = USERS[0];
+
   return (
     <AppContext.Provider value={globalState}>
-      <div className="App h-auto min-h-screen w-full bg-black">
-        <section className="w-full max-w-[900px] mx-auto h-full">
-          <Header />
-          <Stories />
-          <ContentMedia />
-        </section>
-
-        <Portal>
-          <StoryPortal />
-        </Portal>
-      </div>
+      <section>
+        <Header />
+        <StoryBubble
+          userId={id}
+          userName={name}
+          imgUrl={avatar}
+        />
+      </section>
+      <Portal>
+        <StoryPortal />
+      </Portal>
     </AppContext.Provider>
   )
 }

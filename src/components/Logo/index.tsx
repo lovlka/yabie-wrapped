@@ -1,4 +1,4 @@
-import logo from "@app/assets/stories-logo.png"
+import logo from "@app/assets/yabie.svg"
 
 const Logo: React.FC = (): JSX.Element => {
   return(

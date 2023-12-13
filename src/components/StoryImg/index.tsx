@@ -57,11 +57,13 @@ const StoryImg: React.FC<StoryImgProps> = ({ data, imgUrl, children }): JSX.Elem
         onLoad={handleLoad(configStoryTransition)}
       />
 
-      <div className="absolute flex items-center justify-center bottom-0 left-0 w-full h-full pointer-events-none">
-        <pre className="bg-black p-4 bg-opacity-25 rounded-xl">
-          {JSON.stringify(data, null, 2)}
-        </pre>
-      </div>
+      {data && (
+        <div className="absolute flex items-center justify-center bottom-0 left-0 w-full h-full pointer-events-none">
+          <pre className="bg-black p-4 bg-opacity-25 rounded-xl">
+            {JSON.stringify(data, null, 2)}
+          </pre>
+        </div>
+      )}
 
       <ConditionalNode condition={!isVeryLastStory}>
         <StoryButton>
